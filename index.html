@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="StreetPBR project page.">
+    <meta name="description" content="StreetPBR project page with continuous rendering and relighting videos.">
     <meta property="og:title" content="StreetPBR">
-    <meta property="og:description" content="Dynamic relightable urban scene reconstruction from unconstrained photos.">
+    <meta property="og:description" content="Dynamic relightable urban scene reconstruction with fixed-scene environment rotation.">
     <meta property="og:image" content="assets/video/streetpbr_render_sequence_poster.jpg">
     <title>StreetPBR</title>
     <link rel="stylesheet" href="styles.css">
@@ -28,7 +28,6 @@
           <a href="#teaser">Teaser</a>
           <a href="#videos">Videos</a>
           <a href="#method">Method</a>
-          <a href="#benchmark">Dataset</a>
         </div>
       </nav>
       <div class="shade"></div>
@@ -51,24 +50,14 @@
                   <span>Continuous render</span>
                 </article>
                 <article class="teaser-item">
-                  <video autoplay muted loop playsinline preload="metadata" poster="assets/video/streetpbr_relighting_sweep_grid_poster.jpg">
-                    <source src="assets/video/streetpbr_relighting_sweep_grid.mp4" type="video/mp4">
+                  <video autoplay muted loop playsinline preload="metadata" poster="assets/video/streetpbr_env_rotation_poster.jpg">
+                    <source src="assets/video/streetpbr_env_rotation.mp4" type="video/mp4">
                   </video>
-                  <span>Relighting sweep</span>
+                  <span>Rotating environment</span>
                 </article>
                 <article class="teaser-item">
                   <img src="assets/relighting_diversity.png" alt="StreetPBR relighting diversity examples.">
                   <span>Target illumination</span>
-                </article>
-                <article class="teaser-item">
-                  <video autoplay muted loop playsinline preload="metadata" poster="assets/video/streetpbr_decomposition_sequence_poster.jpg">
-                    <source src="assets/video/streetpbr_decomposition_sequence.mp4" type="video/mp4">
-                  </video>
-                  <span>Intrinsic consistency</span>
-                </article>
-                <article class="teaser-item">
-                  <img src="assets/intrinsic_comparison.png" alt="StreetPBR intrinsic decomposition comparison.">
-                  <span>Albedo and normals</span>
                 </article>
                 <article class="teaser-item">
                   <img src="assets/pipeline_overview.png" alt="StreetPBR method overview.">
@@ -83,24 +72,14 @@
                   <span>Continuous render</span>
                 </article>
                 <article class="teaser-item">
-                  <video autoplay muted loop playsinline preload="metadata" poster="assets/video/streetpbr_relighting_sweep_grid_poster.jpg">
-                    <source src="assets/video/streetpbr_relighting_sweep_grid.mp4" type="video/mp4">
+                  <video autoplay muted loop playsinline preload="metadata" poster="assets/video/streetpbr_env_rotation_poster.jpg">
+                    <source src="assets/video/streetpbr_env_rotation.mp4" type="video/mp4">
                   </video>
-                  <span>Relighting sweep</span>
+                  <span>Rotating environment</span>
                 </article>
                 <article class="teaser-item">
                   <img src="assets/relighting_diversity.png" alt="">
                   <span>Target illumination</span>
-                </article>
-                <article class="teaser-item">
-                  <video autoplay muted loop playsinline preload="metadata" poster="assets/video/streetpbr_decomposition_sequence_poster.jpg">
-                    <source src="assets/video/streetpbr_decomposition_sequence.mp4" type="video/mp4">
-                  </video>
-                  <span>Intrinsic consistency</span>
-                </article>
-                <article class="teaser-item">
-                  <img src="assets/intrinsic_comparison.png" alt="">
-                  <span>Albedo and normals</span>
                 </article>
                 <article class="teaser-item">
                   <img src="assets/pipeline_overview.png" alt="">
@@ -117,17 +96,30 @@
       <section class="intro">
         <p>
           StreetPBR reconstructs dynamic street scenes as relightable PBR Gaussians from unconstrained
-          photos. This project page focuses on continuous video results so reviewers can directly inspect
-          temporal stability, intrinsic decomposition, and relighting behavior.
+          photos. This compact project page emphasizes continuous visual results so reviewers can directly
+          inspect stable street-view rendering and fixed-scene relighting under rotating environment illumination.
         </p>
       </section>
 
       <section class="section" id="videos">
         <div class="section-head">
           <p class="tag">Continuous video results</p>
-          <h2>Stable dynamic reconstruction across a street-view sequence.</h2>
+          <h2>Fixed-scene relighting and stable street-view rendering.</h2>
         </div>
         <div class="video-grid">
+          <article class="video-card video-card-large">
+            <video
+              controls
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              poster="assets/video/streetpbr_env_rotation_poster.jpg">
+              <source src="assets/video/streetpbr_env_rotation.mp4" type="video/mp4">
+            </video>
+            <p>Fixed camera relighting: the target environment rotates through a full yaw sweep.</p>
+          </article>
           <article class="video-card video-card-large">
             <video
               controls
@@ -139,33 +131,7 @@
               poster="assets/video/streetpbr_render_sequence_poster.jpg">
               <source src="assets/video/streetpbr_render_sequence.mp4" type="video/mp4">
             </video>
-            <p>Continuous PBR render sequence</p>
-          </article>
-          <article class="video-card">
-            <video
-              controls
-              autoplay
-              muted
-              loop
-              playsinline
-              preload="metadata"
-              poster="assets/video/streetpbr_relighting_sweep_grid_poster.jpg">
-              <source src="assets/video/streetpbr_relighting_sweep_grid.mp4" type="video/mp4">
-            </video>
-            <p>Relighting sweep: changing target illumination across StreetPBR reconstructions</p>
-          </article>
-          <article class="video-card">
-            <video
-              controls
-              autoplay
-              muted
-              loop
-              playsinline
-              preload="metadata"
-              poster="assets/video/streetpbr_decomposition_sequence_poster.jpg">
-              <source src="assets/video/streetpbr_decomposition_sequence.mp4" type="video/mp4">
-            </video>
-            <p>Time-consistent decomposition: render, albedo, normal, depth</p>
+            <p>Continuous PBR render sequence across a dynamic street-view trajectory.</p>
           </article>
         </div>
       </section>
@@ -179,18 +145,6 @@
           <img src="assets/pipeline_overview.png" alt="StreetPBR method overview diagram.">
           <figcaption>Overview of the StreetPBR reconstruction and relighting pipeline.</figcaption>
         </figure>
-      </section>
-
-      <section class="section" id="benchmark">
-        <div class="section-head">
-          <p class="tag">DynamicStreet</p>
-          <h2>A synthetic street-scene benchmark with controllable lighting and material annotations.</h2>
-        </div>
-        <p class="note">
-          DynamicStreet is built with realistic ego-vehicle trajectories in Unreal Engine and provides
-          synchronized RGB, depth, normal, material, and illumination annotations for evaluating dynamic
-          urban inverse rendering.
-        </p>
       </section>
     </main>
 
