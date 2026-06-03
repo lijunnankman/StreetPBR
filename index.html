@@ -3,217 +3,90 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta
-      name="description"
-      content="StreetPBR: Dynamic relightable urban scene reconstruction from unconstrained photos."
-    >
+    <meta name="description" content="StreetPBR project page.">
     <meta property="og:title" content="StreetPBR">
-    <meta
-      property="og:description"
-      content="A dynamic Gaussian PBR framework and DynamicStreet benchmark for urban inverse rendering and relighting."
-    >
+    <meta property="og:description" content="Dynamic relightable urban scene reconstruction from unconstrained photos.">
     <meta property="og:image" content="assets/relighting_diversity.png">
     <title>StreetPBR</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header class="hero">
-      <nav class="top-nav" aria-label="Primary">
-        <a class="brand" href="#">StreetPBR</a>
-        <div class="nav-links">
-          <a href="#results">Results</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#" class="brand">StreetPBR</a>
+        <div class="links">
+          <a href="#relighting">Relighting</a>
+          <a href="#decomposition">Decomposition</a>
           <a href="#method">Method</a>
-          <a href="#benchmark">Benchmark</a>
-          <a href="#citation">Citation</a>
+          <a href="#benchmark">Dataset</a>
         </div>
       </nav>
-      <div class="hero-overlay" aria-hidden="true"></div>
-      <section class="hero-content">
-        <p class="eyebrow">Dynamic urban inverse rendering and relighting</p>
+      <div class="shade"></div>
+      <div class="hero-text">
+        <p class="tag">Dynamic urban inverse rendering and relighting</p>
         <h1>StreetPBR</h1>
-        <p class="subtitle">
-          Dynamic Relightable Urban Scene Reconstruction from Unconstrained Photos
-        </p>
+        <p class="subtitle">Dynamic Relightable Urban Scene Reconstruction from Unconstrained Photos</p>
         <p class="authors">Junnan Li, Haozhe Xie, and Shengping Zhang</p>
-        <div class="actions" aria-label="Project links">
-          <a href="https://github.com/lijunnankman/StreetPBR" target="_blank" rel="noopener">Code</a>
-          <a href="#benchmark">DynamicStreet</a>
-        </div>
-      </section>
+      </div>
     </header>
 
     <main>
-      <section class="section intro" aria-labelledby="overview-title">
-        <div class="section-heading">
-          <p class="eyebrow">At a glance</p>
-          <h2 id="overview-title">A relightable representation for moving street scenes.</h2>
-        </div>
-        <div class="intro-copy">
-          <p>
-            StreetPBR recovers geometry, materials, and illumination in dynamic urban scenes, then uses the
-            recovered PBR representation for temporally coherent relighting. The system starts from
-            unconstrained multi-view photos and does not require LiDAR point-cloud initialization.
-          </p>
-          <p>
-            The paper also introduces DynamicStreet, a synthetic Unreal Engine benchmark with realistic
-            ego-vehicle trajectories and ground-truth geometry, materials, and illumination for controlled
-            evaluation of dynamic inverse rendering.
-          </p>
-        </div>
+      <section class="intro">
+        <p>
+          StreetPBR reconstructs dynamic street scenes as relightable PBR Gaussians from unconstrained
+          photos. The goal of this page is simple: show whether the recovered scene can change lighting
+          coherently while keeping geometry, materials, vehicles, and road structure stable.
+        </p>
       </section>
 
-      <section class="section visual-proof" id="results" aria-labelledby="results-title">
-        <div class="section-heading">
-          <p class="eyebrow">Visual evidence</p>
-          <h2 id="results-title">Relighting should change illumination, not bake it into color.</h2>
-          <p>
-            Different target environment maps produce coherent changes in global tone, local contrast,
-            road reflections, vehicles, and building facades across multiple dynamic street scenes.
-          </p>
+      <section class="section" id="relighting">
+        <div class="section-head">
+          <p class="tag">Relighting results</p>
+          <h2>Different target illumination, same recovered scene.</h2>
         </div>
-        <figure class="wide-figure">
-          <img src="assets/relighting_diversity.png" alt="StreetPBR relighting results across target environment maps and source scenes.">
-          <figcaption>Controlled relighting diversity across scenes and target illumination maps.</figcaption>
+        <figure>
+          <img src="assets/relighting_diversity.png" alt="StreetPBR relighting examples under different target environment maps.">
+          <figcaption>Rows show target illumination maps; columns show different input street scenes.</figcaption>
         </figure>
       </section>
 
-      <section class="section split-grid" aria-labelledby="comparison-title">
-        <div class="section-heading">
-          <p class="eyebrow">Intrinsic decomposition</p>
-          <h2 id="comparison-title">Cleaner albedo and normals on dynamic urban content.</h2>
-          <p>
-            Compared with inverse-rendering baselines, StreetPBR keeps road markings, vehicles, and
-            building boundaries more consistent across rendered appearance, albedo, and normal outputs.
-          </p>
+      <section class="section" id="decomposition">
+        <div class="section-head">
+          <p class="tag">Intrinsic decomposition</p>
+          <h2>Recovered appearance, albedo, and normals remain visually consistent.</h2>
         </div>
-        <figure class="wide-figure">
-          <img src="assets/intrinsic_comparison.png" alt="Qualitative comparison of render, albedo, and normal outputs for StreetPBR and baselines.">
+        <figure>
+          <img src="assets/intrinsic_comparison.png" alt="Qualitative comparison of rendered images, albedo, and normal maps.">
           <figcaption>Qualitative comparison on DynamicStreet.</figcaption>
         </figure>
       </section>
 
-      <section class="section metrics" aria-labelledby="metrics-title">
-        <div class="section-heading">
-          <p class="eyebrow">Quantitative snapshot</p>
-          <h2 id="metrics-title">The main numbers reviewers should see first.</h2>
+      <section class="section" id="method">
+        <div class="section-head">
+          <p class="tag">Method overview</p>
+          <h2>LiDAR-free initialization, dynamic masks, sunlight modeling, and material alignment.</h2>
         </div>
-        <div class="metric-grid">
-          <article>
-            <span>Normal MAE</span>
-            <strong>0.139 rad</strong>
-            <p>Best baseline: 0.273 rad</p>
-          </article>
-          <article>
-            <span>Albedo PSNR</span>
-            <strong>24.69 dB</strong>
-            <p>Best baseline: 20.91 dB</p>
-          </article>
-          <article>
-            <span>Relighting PSNR</span>
-            <strong>25.62 dB</strong>
-            <p>Best baseline: 20.62 dB</p>
-          </article>
-          <article>
-            <span>WACE-Albedo</span>
-            <strong>0.042</strong>
-            <p>w/o alignment: 0.063</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section method" id="method" aria-labelledby="method-title">
-        <div class="section-heading">
-          <p class="eyebrow">Method</p>
-          <h2 id="method-title">Four pieces keep geometry, material, and lighting disentangled.</h2>
-        </div>
-        <div class="method-grid">
-          <article>
-            <span>01</span>
-            <h3>LiDAR-free Gaussian scaffold</h3>
-            <p>Image-based camera and point-map initialization builds the scene representation from photos.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>Scene-aware dynamic masks</h3>
-            <p>Object-level refinement stabilizes moving cars, pedestrians, cyclists, and motorcycles.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>Sunlight and shadow modeling</h3>
-            <p>Material priors, relative-lightness shadows, and Lambertian cues estimate dominant sunlight.</p>
-          </article>
-          <article>
-            <span>04</span>
-            <h3>Cross-frame material alignment</h3>
-            <p>Dynamic material Gaussians are aligned over time to reduce flicker during relighting.</p>
-          </article>
-        </div>
-        <figure class="wide-figure">
-          <img src="assets/pipeline_overview.png" alt="Overview of the StreetPBR pipeline.">
-          <figcaption>StreetPBR pipeline overview.</figcaption>
+        <figure>
+          <img src="assets/pipeline_overview.png" alt="StreetPBR method overview diagram.">
+          <figcaption>Overview of the StreetPBR reconstruction and relighting pipeline.</figcaption>
         </figure>
       </section>
 
-      <section class="section benchmark" id="benchmark" aria-labelledby="benchmark-title">
-        <div class="section-heading">
-          <p class="eyebrow">DynamicStreet benchmark</p>
-          <h2 id="benchmark-title">A controlled testbed for dynamic urban inverse rendering.</h2>
-          <p>
-            DynamicStreet is built in Unreal Engine using realistic ego-vehicle trajectories, synchronized
-            RGB, depth, normal, albedo, metallic, roughness, and illumination annotations.
-          </p>
+      <section class="section" id="benchmark">
+        <div class="section-head">
+          <p class="tag">DynamicStreet</p>
+          <h2>A synthetic street-scene benchmark with controllable lighting and material annotations.</h2>
         </div>
-        <div class="stat-grid">
-          <article>
-            <strong>100</strong>
-            <span>ego-vehicle trajectories</span>
-          </article>
-          <article>
-            <strong>104K</strong>
-            <span>rendered frames</span>
-          </article>
-          <article>
-            <strong>1920 x 1280</strong>
-            <span>render resolution</span>
-          </article>
-          <article>
-            <strong>5 x 5 x 5</strong>
-            <span>env maps, sun intensities, fog levels</span>
-          </article>
-        </div>
-      </section>
-
-      <section class="section temporal" aria-labelledby="temporal-title">
-        <div class="section-heading">
-          <p class="eyebrow">Temporal stability</p>
-          <h2 id="temporal-title">Moving objects need stable materials over time.</h2>
-          <p>
-            Cross-frame material texture alignment reduces dynamic-region albedo flicker and makes relit
-            videos more coherent across adjacent frames.
-          </p>
-        </div>
-        <figure class="wide-figure">
-          <img src="assets/temporal_consistency.png" alt="Temporal consistency comparison of StreetPBR with and without cross-frame alignment.">
-          <figcaption>Temporal albedo consistency on dynamic-object regions.</figcaption>
-        </figure>
-      </section>
-
-      <section class="section citation" id="citation" aria-labelledby="citation-title">
-        <div class="section-heading">
-          <p class="eyebrow">Citation</p>
-          <h2 id="citation-title">BibTeX</h2>
-        </div>
-        <pre><code>@misc{li2026streetpbr,
-  title={StreetPBR: Dynamic Relightable Urban Scene Reconstruction from Unconstrained Photos},
-  author={Li, Junnan and Xie, Haozhe and Zhang, Shengping},
-  year={2026},
-  note={Manuscript}
-}</code></pre>
+        <p class="note">
+          DynamicStreet is built with realistic ego-vehicle trajectories in Unreal Engine and provides
+          synchronized RGB, depth, normal, material, and illumination annotations for evaluating dynamic
+          urban inverse rendering.
+        </p>
       </section>
     </main>
 
     <footer>
-      <p>StreetPBR: Dynamic Relightable Urban Scene Reconstruction from Unconstrained Photos</p>
+      <p>StreetPBR</p>
     </footer>
   </body>
 </html>
