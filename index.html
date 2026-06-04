@@ -12,10 +12,17 @@
   </head>
   <body>
     <header class="hero">
-      <img
+      <video
         class="hero-video"
-        src="assets/video/streetpbr_render_sequence_poster.jpg"
-        alt="StreetPBR street scene rendering">
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="assets/video/streetpbr_render_sequence_poster.jpg"
+        aria-label="StreetPBR continuous street scene rendering">
+        <source src="assets/video/streetpbr_render_sequence.mp4" type="video/mp4">
+      </video>
       <nav class="nav" aria-label="Primary">
         <a href="#" class="brand">StreetPBR</a>
         <div class="links">
