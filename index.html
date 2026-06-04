@@ -30,6 +30,7 @@
           <a href="#videos">Videos</a>
           <a href="#real-world">Real-world</a>
           <a href="#components">Components</a>
+          <a href="#method">Method</a>
         </div>
       </nav>
       <div class="shade"></div>
@@ -67,17 +68,8 @@
                   <span>Target illumination</span>
                 </article>
                 <article class="teaser-item">
-                  <video
-                    autoplay
-                    muted
-                    loop
-                    playsinline
-                    preload="metadata"
-                    poster="assets/video/streetpbr_realworld_waymo_sequence_poster.jpg"
-                    aria-label="StreetPBR real-world Waymo rendering sequence.">
-                    <source src="assets/video/streetpbr_realworld_waymo_sequence.mp4" type="video/mp4">
-                  </video>
-                  <span>Real-world scenes</span>
+                  <img src="assets/pipeline_overview.png" alt="StreetPBR method overview.">
+                  <span>StreetPBR pipeline</span>
                 </article>
               </div>
               <div class="teaser-set" aria-hidden="true">
@@ -102,16 +94,8 @@
                   <span>Target illumination</span>
                 </article>
                 <article class="teaser-item">
-                  <video
-                    autoplay
-                    muted
-                    loop
-                    playsinline
-                    preload="metadata"
-                    poster="assets/video/streetpbr_realworld_waymo_sequence_poster.jpg">
-                    <source src="assets/video/streetpbr_realworld_waymo_sequence.mp4" type="video/mp4">
-                  </video>
-                  <span>Real-world scenes</span>
+                  <img src="assets/pipeline_overview.png" alt="">
+                  <span>StreetPBR pipeline</span>
                 </article>
               </div>
             </div>
@@ -234,6 +218,16 @@
         </div>
       </section>
 
+      <section class="section" id="method">
+        <div class="section-head">
+          <p class="tag">Method overview</p>
+          <h2>LiDAR-free initialization, dynamic masks, sunlight modeling, and material alignment.</h2>
+        </div>
+        <figure>
+          <img src="assets/pipeline_overview.png" alt="StreetPBR method overview diagram.">
+          <figcaption>Overview of the StreetPBR reconstruction and relighting pipeline.</figcaption>
+        </figure>
+      </section>
     </main>
 
     <footer>
