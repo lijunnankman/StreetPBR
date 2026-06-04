@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="StreetPBR project page with continuous PBR rendering and multi-illumination relighting videos.">
+    <meta name="description" content="StreetPBR project page with continuous PBR rendering, multi-illumination relighting, and real-world driving videos.">
     <meta property="og:title" content="StreetPBR">
-    <meta property="og:description" content="Dynamic relightable urban scene reconstruction with continuous PBR rendering and multi-illumination relighting videos.">
+    <meta property="og:description" content="Dynamic relightable urban scene reconstruction with continuous PBR rendering, multi-illumination relighting, and real-world driving videos.">
     <meta property="og:image" content="assets/video/streetpbr_render_sequence_poster.jpg">
     <title>StreetPBR</title>
     <link rel="stylesheet" href="styles.css">
@@ -21,6 +21,7 @@
         <div class="links">
           <a href="#teaser">Teaser</a>
           <a href="#videos">Videos</a>
+          <a href="#real-world">Real-world</a>
           <a href="#method">Method</a>
         </div>
       </nav>
@@ -118,6 +119,41 @@
               <source src="assets/video/streetpbr_multi_target_relighting_sequence.mp4" type="video/mp4">
             </video>
             <p>Continuous relighting sequence under city, fireplace, forest, and night illumination maps.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="real-world">
+        <div class="section-head">
+          <p class="tag">Real-world sequences</p>
+          <h2>KITTI and Waymo driving scenes rendered as continuous PBR videos.</h2>
+        </div>
+        <div class="video-grid real-world-grid">
+          <article class="video-card">
+            <video
+              controls
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              poster="assets/video/streetpbr_realworld_kitti_sequence_poster.jpg">
+              <source src="assets/video/streetpbr_realworld_kitti_sequence.mp4" type="video/mp4">
+            </video>
+            <p>KITTI real-world driving sequence.</p>
+          </article>
+          <article class="video-card">
+            <video
+              controls
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              poster="assets/video/streetpbr_realworld_waymo_sequence_poster.jpg">
+              <source src="assets/video/streetpbr_realworld_waymo_sequence.mp4" type="video/mp4">
+            </video>
+            <p>Waymo real-world urban sequence.</p>
           </article>
         </div>
       </section>

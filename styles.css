@@ -282,6 +282,11 @@ figure {
   object-fit: cover;
 }
 
+.real-world-grid .video-card video {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
 .video-card p,
 figcaption {
   margin: 0;
