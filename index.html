@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="StreetPBR project page with continuous PBR rendering, multi-illumination relighting, real-world driving videos, and decomposed material components.">
+    <meta name="description" content="StreetPBR project page with continuous PBR rendering, selected relighting results, real-world driving videos, and decomposed material components.">
     <meta property="og:title" content="StreetPBR">
-    <meta property="og:description" content="Dynamic relightable urban scene reconstruction with continuous PBR rendering, multi-illumination relighting, real-world driving videos, and decomposed material components.">
+    <meta property="og:description" content="Dynamic relightable urban scene reconstruction with continuous PBR rendering, selected relighting results, real-world driving videos, and decomposed material components.">
     <meta property="og:image" content="assets/video/streetpbr_render_sequence_poster.jpg">
     <title>StreetPBR</title>
     <link rel="stylesheet" href="styles.css">
@@ -51,7 +51,7 @@
                   <span>Render snapshots</span>
                 </article>
                 <article class="teaser-item">
-                  <img src="assets/teaser_multi_target_relighting.jpg" alt="StreetPBR relighting snapshots under multiple target illumination maps.">
+                  <img src="assets/streetpbr_selected_relighting.jpg" alt="Selected StreetPBR relighting results under city and fireplace target illumination.">
                   <span>Relighting views</span>
                 </article>
                 <article class="teaser-item">
@@ -69,7 +69,7 @@
                   <span>Render snapshots</span>
                 </article>
                 <article class="teaser-item">
-                  <img src="assets/teaser_multi_target_relighting.jpg" alt="">
+                  <img src="assets/streetpbr_selected_relighting.jpg" alt="">
                   <span>Relighting views</span>
                 </article>
                 <article class="teaser-item">
@@ -91,15 +91,15 @@
       <section class="intro">
         <p>
           StreetPBR reconstructs dynamic street scenes as relightable PBR Gaussians from unconstrained
-          photos. This compact preview page emphasizes continuous visual results so we can inspect
-          relighting behavior before finalizing the reviewer-facing assets.
+          photos. This project page highlights continuous PBR rendering, selected relighting results,
+          real-world driving reconstructions, and decomposed material components.
         </p>
       </section>
 
       <section class="section" id="videos">
         <div class="section-head">
-          <p class="tag">Continuous video results</p>
-          <h2>Multi-scene PBR rendering and multi-illumination relighting.</h2>
+          <p class="tag">Video and relighting results</p>
+          <h2>Multi-scene PBR rendering and selected StreetPBR relighting.</h2>
         </div>
         <div class="video-grid">
           <article class="video-card video-card-large">
@@ -116,17 +116,11 @@
             <p>Continuous PBR render sequences across four dynamic street-view scenes.</p>
           </article>
           <article class="video-card video-card-large">
-            <video
-              controls
-              autoplay
-              muted
-              loop
-              playsinline
-              preload="metadata"
-              poster="assets/video/streetpbr_multi_target_relighting_sequence_poster.jpg">
-              <source src="assets/video/streetpbr_multi_target_relighting_sequence.mp4" type="video/mp4">
-            </video>
-            <p>Continuous relighting sequence under city, fireplace, forest, and night illumination maps.</p>
+            <img
+              class="result-panel"
+              src="assets/streetpbr_selected_relighting.jpg"
+              alt="Selected StreetPBR relighting results under city and fireplace target illumination in two street scenes.">
+            <p>Selected StreetPBR relighting results under city and fireplace illumination.</p>
           </article>
         </div>
       </section>
