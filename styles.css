@@ -277,14 +277,13 @@ figure {
   object-fit: contain;
 }
 
-.video-card img.result-panel {
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  background: #101316;
-}
-
 .video-card-large video {
   aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.video-card-relighting video {
+  aspect-ratio: 16 / 9;
   object-fit: cover;
 }
 
